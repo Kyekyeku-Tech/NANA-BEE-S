@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>The Nelson Foundation</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://i.postimg.cc/R0J1GfYp/tnf-logo.jpg">
+    <style>
+         body {
+            font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: blue;
+    background-image: url('https://i.postimg.cc/MTGZYRWF/tnf-hero.jpg');
+    background-size: contain;
+    padding: 0;
+    margin: 0;
+        }
+        .section {
+            padding: 40px;
+            margin-top: 80px;
+            background: rgb(250, 249, 249);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            margin: 25px;
+        }
+
+        .section:hover {
+            transform: translateY(-10px);
+        }
+
+        .download-button a {
+            background: blue;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .download-button a:hover {
+            background: #004b99;
+        }
+
+        .counters-section-type-2 {
+            background-color: #343a40;
+            padding: 60px 0;
+            color: white;
+        }
+
+        .counter-box {
+            padding: 30px;
+            margin: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .counter-box:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .counter-box .title-counter {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 0px;
+        }
+
+        .counter-box .prop-obj {
+            font-size: 60px;
+            font-weight: bold;
+        }
+
+        
+        
+        .whatsapp-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25d366;
+            padding: 15px;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
+        .whatsapp-widget img {
+            width: 40px;
+            height: 40px;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+                cursor: pointer;
+                font-size: 24px;
+            }
+
+            .menu-toggle span {
+                color: white;
+            }
+
+            .mobile-menu {
+                display: block;
+                position: absolute;
+                top: 70px;
+                left: 20px;
+                background: #333;
+                padding: 20px;
+                border-radius: 10px;
+                width: 200px;
+            }
+
+            .mobile-menu li {
+                margin: 10px 0;
+                text-align: center;
+            }
+        }
+    
+        .logo1 {
+            text-align: center;
+            margin-bottom: 2px;
+        }
+        .logo1 img {
+            max-width: 200px;
+            height: auto;
+        }
+        .download-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+        #button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: blue;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #button:hover {
+            background-color: rgb(11, 12, 12);
+        }
+        
+    .counters-section-type-2 {
+  background-color: #0c0000a9; /* Light gray background */
+  padding: 50px 0;
+}
+
+.counter-box {
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid #dedede;
+  border-radius: 20px;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+  text-align: center; /* Ensures everything inside the box is centered */
+}
+
+.counter-box:hover {
+  transform: scale(1.05);
+}
+
+.title-counter {
+  font-size: 18px;
+  color: #f7f3f3;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center; /* Center text */
+}
+
+.prop-obj {
+  font-size: 48px;
+  color: blue;
+  font-weight: 600;
+  text-align: center; /* Center number */
+}
+
+.border-bottom-simple {
+  border-bottom: 2px solid #080000;
+}
+
+.border-top-simple {
+  border-top: 2px solid #dedede;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .counter-box {
+    margin: 10px 0;
+  }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="https://i.postimg.cc/R0J1GfYp/tnf-logo.jpg" alt="The Nelson Foundation Logo">
+            </div>
+            <nav>
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <span>Menu</span>
+                    <span>&#9776;</span>
+                </div>
+                <ul id="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="gallary.html">Gallery</a></li>
+                    <li><a href="Donate.html" id="btn">Donate</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="logo1">
+        <img src="https://i.postimg.cc/prLF0n16/IMG-20240627-WA0043.jpg" alt="The Nelson Foundation Logo">
+    </div>
+    <section class="counters-section-type-2 border-bottom-simple border-top-simple">
+        <div class="container-fluid py-5">
+          <div class="row counters-wrapper justify-content-center text-center">
+            <div class="col-sm-4 col-6 counter-box first-side d-flex flex-column align-items-center">
+              <p class="title-counter">Victim Support</p>
+              <span class="prop-obj prop-obj1" data-count="128">0</span>
+            </div>
+            <div class="col-sm-4 col-6 counter-box second-side d-flex flex-column align-items-center">
+              <p class="title-counter">People Loved</p>
+              <span class="prop-obj prop-obj2" data-count="156">0</span>
+            </div>
+            <div class="col-sm-4 col-6 counter-box third-side d-flex flex-column align-items-center">
+              <p class="title-counter">Awards Received</p>
+              <span class="prop-obj prop-obj3" data-count="2">0</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    <div class="section">
+        <h2>Welcome to The Nelson Foundation</h2>
+        <p>Empowering disabled females to thrive and succeed.</p>
+        <p>Together, we create opportunities for women with disabilities to lead independent and fulfilling lives.</p>
+        <p><strong>Our Vision:</strong> To build a world where every woman, regardless of her physical abilities, has equal opportunities to succeed and contribute meaningfully to society.</p>
+        <div class="download-button">
+            <a href="https://chat.whatsapp.com/JkZpQMf7bywKANwdgOs8v5" id="button">Join Us</a>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Who We Are</h2>
+        <p>At The Nelson Foundation, we are dedicated to making a difference in the lives of disabled females. Our mission is to provide support, resources, and opportunities to empower women with disabilities, helping them lead independent and fulfilling lives.</p>
+    </div>
+
+    <div class="section">
+        <h2>Our mission</h2>
+        <p>We believe that every woman, regardless of her physical abilities, deserves equal opportunities to thrive and succeed. Our foundation focuses on creating inclusive environments, offering educational programs, and advocating for the rights of disabled females.</p>
+    </div>
+
+    <div class="section">
+        <h2>What We Do</h2>
+        <ul>
+            <li><strong>Support Services:</strong> We offer a range of support services, including counseling, career guidance, and personal development workshops, to help disabled women overcome challenges and achieve their goals.</li>
+            <li><strong>Education and Training:</strong> Our educational initiatives provide access to quality education and vocational training, enabling women to acquire new skills and enhance their employability.</li>
+            <li><strong>Advocacy:</strong> We work tirelessly to raise awareness about the issues faced by disabled females and advocate for policies that promote inclusivity and accessibility in all aspects of society.</li>
+            <li><strong>Community Building:</strong> We foster a strong sense of community through events, support groups, and online platforms, where women can connect, share experiences, and support each other.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Our Impact</h2>
+        <p>Since our inception, The Nelson Foundation has positively impacted the lives of numerous disabled females. We have seen women gain confidence, secure employment, and build meaningful relationships, all while contributing to their communities.</p>
+    </div>
+    <section class="testimonials">
+        <h2>What People Say About Us</h2>
+        <div class="testimonial-slider">
+            <div class="testimonial-slide">
+                <img src="https://i.postimg.cc/xd7CTz6G/image-4.png" alt="Person 1">
+                <blockquote>
+                    "The Nelson Foundation has truly changed my life. Their support has been invaluable."
+                </blockquote>
+                <p>- Helina Boafo</p>
+            </div>
+            <div class="testimonial-slide">
+                <img src="https://i.postimg.cc/xd7CTz6G/image-4.png" alt="Person 2">
+                <blockquote>
+                    "I couldn't be more grateful for the opportunities they've provided me."
+                </blockquote>
+                <p>- Rebecca Arthur</p>
+            </div>
+            <div class="testimonial-slide">
+                <img src="https://i.postimg.cc/xd7CTz6G/image-4.png" alt="Person 3">
+                <blockquote>
+                    "Their dedication and passion are evident in everything they do."
+                </blockquote>
+                <p>- Lydia Quarm</p>
+            </div>
+        </div>
+    </section> 
+    
+    <div class="contact-container" id="contact">
+        <form class="contact-form" action="submit_form.php" method="POST">
+            <h2>Contact Us</h2>
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+            <p>Have a question? <a href="faq.html">Visit our FAQ</a></p>
+        </form>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <!-- Logo Section -->
+            <div class="footer-logo">
+                <img src="https://i.postimg.cc/R0J1GfYp/tnf-logo.jpg" alt="The Nelson Foundation Logo">
+            </div>
+    
+            <!-- Navigation Section -->
+            <nav>
+                <ul class="footer-nav">
+                    <li><a href="Donate.html">Donate</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="mailto:thenelsonfoundation@zohomail.com">Contact Us</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                </ul>
+            </nav>
+    
+            <!-- Contact Information -->
+            <div class="footer-contact">
+                <p>Let's Connect:</p>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Takoradi Axim, Ghana</li>
+                    <li><i class="fas fa-phone-alt"></i> 0545454000</li>
+                    <li><i class="fas fa-envelope"></i> <a href="mailto:thenelsonfoundation@zohomail.com">thenelsonfoundation@zohomail.com</a></li>
+                    <li><i class="fab fa-whatsapp"></i> 0559619113</li>
+                </ul>
+            </div>
+    
+            <!-- Working Hours -->
+            <div class="footer-hours">
+                <p>Working Hours:</p>
+                <ul>
+                    <li>Monday - Friday</li>
+                    <li>8:00 AM - 5:30 PM</li>
+                </ul>
+            </div>
+    
+            <!-- Newsletter Section -->
+            <div class="newsletter">
+                <h3>Subscribe to Our Newsletter</h3>
+                <p>Subscribe to get updates about our services and offers.</p>
+                <form>
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    
+        <!-- Copyright -->
+        <div class="footer-bottom">
+            <p>Copyright ©2024 The Nelson Foundation. All rights reserved.</p>
+        </div>
+    </footer>
+    <div class="whatsapp-widget" onclick="window.location.href='https://chat.whatsapp.com/JkZpQMf7bywKANwdgOs8v5'">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </div>
+    <script>
+         // Counter animation function
+  function animateCounters() {
+    const counters = document.querySelectorAll('.prop-obj');
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-count');
+        const count = +counter.innerText;
+
+        // Set increment value
+        const increment = target / 100;
+
+        // If the count is less than the target, keep incrementing
+        if (count < target) {
+          counter.innerText = Math.ceil(count + increment);
+          setTimeout(updateCount, 20); // Speed of the increment
+        } else {
+          counter.innerText = target; // When complete, set to the target value
+        }
+      };
+
+      // Initial call to start counting
+      updateCount();
+    });
+  }
+
+  // Trigger counters animation on page load
+  window.onload = function () {
+    animateCounters();
+  };
+         function toggleMenu() {
+            var menu = document.getElementById('nav-menu');
+            menu.classList.toggle('mobile-menu');
+        }
+      
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.testimonial-slide');
+    
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.style.display = (i === index) ? 'block' : 'none';
+        });
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    setInterval(nextSlide, 3000); // Change slide every 3 seconds
+    </script>
+</body>
+</html>

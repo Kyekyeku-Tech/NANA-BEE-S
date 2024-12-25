@@ -1,0 +1,594 @@
+/* Reset some basic elements for better consistency across browsers */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General Body Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #f1ebeb;
+    background-color: #f1f1f7;
+    background-size: contain;
+    padding: 0;
+    margin: 0;
+}
+/* Logo Styling */
+.logo img {
+    max-width: 70px;
+    height: auto;
+}
+/* Header and Navigation */
+header {
+    background-color: rgba(1, 0, 8, 0.87);
+    box-shadow: 0 5px 5px rgba(4, 4, 245, 0.863);
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: transparent;
+}
+/* Navigation Styling */
+header nav {
+    display: flex;
+    align-items: center;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+#nav-menu {
+    display: flex;
+    list-style: none;
+    margin-left: auto;
+}
+
+#nav-menu li {
+    margin-left: 0px;
+}
+
+#nav-menu li a {
+    text-decoration: none;
+    color: #efedf1;
+    font-weight: 500;
+    padding: 8px 15px;
+    transition: color 0.3s ease;
+}
+
+#nav-menu li a:hover {
+    color: #010a0f;
+    background-color: rgb(237, 237, 241);
+}
+
+#btn {
+    background-color: blue;
+    color: white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+#btn:hover {
+    background-color: #00060c;
+    color: white;
+}
+.testimonials {
+    padding: 50px 20px;
+    background-color: blue;
+    text-align: center;
+}
+
+.testimonials h2 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: rgb(247, 246, 246);
+}
+
+.testimonial-slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.testimonial-slide {
+    display: none;
+    padding: 20px;
+    text-align: center;
+}
+
+.testimonial-slide img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.testimonial-slide blockquote {
+    font-size: 1.2em;
+    font-style: italic;
+    margin-bottom: 10px;
+    color: #0c0c0c;
+}
+
+.testimonial-slide p {
+    font-weight: bold;
+    color: rgb(247, 243, 242);
+}
+
+/* Show the first slide initially */
+.testimonial-slide:first-child {
+    display: block;
+}
+
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    background: url('https://1.bp.blogspot.com/-0jj9GX2bwFY/XV03C3FoaKI/AAAAAAAASx0/rRvwXXmteTkwVvUnPoCEwUWH2fIwt9mSgCLcBGAs/s1600/DSC03175.JPG') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-overlay {
+    background: blue; /* Semi-transparent overlay */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(17, 0, 255, 0.651);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    max-width: 700px;
+    line-height: 1.6;
+    color: #f3f3f3;
+}
+
+.hero-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background: blue; /* Bright, engaging button color */
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(77, 75, 75, 0.2);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.hero-btn:hover {
+    background: rgb(12, 12, 12);
+    transform: scale(1.05);
+}
+
+/* About Section */
+.about {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+    background-color: blue;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 12px 1px rgb(0, 0, 10);
+}
+
+.about h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.about p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.about a {
+    text-decoration: none;
+    color: white;
+    background-color: #000007;
+    padding: 10px 30px;
+    border-radius: 30px;
+    transition: background 0.3s ease;
+}
+
+.about a:hover {
+    background-color: rgb(1, 1, 14);
+}
+
+/* Stats Section */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: blue;
+    color: white;
+    padding: 40px 20px;
+    box-shadow: 0 12px 10px rgba(0, 0, 14, 0.973);
+}
+
+.stats div {
+    text-align: center;
+}
+
+.stats h3 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.stats p {
+    font-size: 1.1rem;
+}
+
+/* Services Section */
+.services {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.service {
+    flex: 1;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 12px 10px rgb(0, 0, 12);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+/* Logo Styling */
+
+
+.service h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: blue;
+}
+.services h2 {
+    color: rgb(245, 241, 241);
+}
+.service p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #00050a;
+}
+
+.service:hover {
+    transform: translateY(-10px);
+}
+
+/* Call-to-Action Section */
+.call-to-action {
+    background-color: blue;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 50px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px blue;
+}
+
+.call-to-action h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.call-to-action p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.call-to-action a {
+    text-decoration: none;
+    background-color: white;
+    color: blue;
+    padding: 10px 30px;
+    border-radius: 30px;
+    transition: background 0.3s ease;
+}
+
+.call-to-action a:hover {
+    background-color: blue;
+    color: white;
+}
+
+/* Footer */
+
+/* Footer Styles */
+footer {
+    background-color:rgba(0, 0, 0, 0.822);
+    color: #fff;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.footer-logo img {
+    max-width: 150px;
+    margin-bottom: 20px;
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-nav ul li {
+    margin-bottom: 10px;
+}
+
+.footer-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-nav ul li a:hover {
+    color: blue;
+}
+
+.footer-contact ul, 
+.footer-hours ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-contact ul li,
+.footer-hours ul li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-contact ul li i,
+.footer-hours ul li i {
+    color: blue;
+}
+
+.newsletter h3 {
+    margin-bottom: 10px;
+}
+
+.newsletter form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.newsletter input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    flex: 1;
+}
+
+.newsletter button {
+    padding: 10px 20px;
+    border: none;
+    background-color: blue;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.newsletter button:hover {
+    background-color: #0e0301;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #555;
+    padding-top: 20px;
+    font-size: 0.9rem;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-contact ul, 
+    .footer-hours ul {
+        align-items: center;
+    }
+}
+
+/* WhatsApp Widget */
+.whatsapp-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(14, 1, 1, 0.644);
+    padding: 10px;
+}
+
+.whatsapp-widget img {
+    width: 50px;
+    height: 50px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .services {
+        flex-direction: column;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    #nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 40%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: rgba(3, 3, 97, 0.37);
+        padding: 10px;
+    
+    }
+
+    #nav-menu.mobile-menu {
+        display: flex;
+    }
+
+    #nav-menu li {
+        margin: 5px 0;
+    }
+
+    .stats {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+}
+.social-icons {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 10px;
+    color: #030b80; /* Blue color for social icons */
+    font-size: 1.5em;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #f7faf7; /* Darker shade of blue on hover */
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.contact-form {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.contact-form h2 {
+    color: #333;
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 2px solid blue;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: blue;
+    outline: none;
+    background-color: #fff5e1;
+}
+
+.contact-form button {
+    background-color: blue;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: rgb(19, 17, 17);
+    color: rgb(14, 4, 1);
+}
+
+.contact-form p {
+    font-size: 14px;
+    color: #555;
+}
+
+.contact-form p a {
+    color: rgb(252, 71, 5);
+    text-decoration: none;
+}
+
+.contact-form p a:hover {
+    text-decoration: underline;
+}
