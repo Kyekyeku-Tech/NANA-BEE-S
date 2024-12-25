@@ -22,8 +22,8 @@ body {
 }
 /* Header and Navigation */
 header {
-    background-color: rgba(1, 0, 8, 0.87);
-    box-shadow: 0 5px 5px rgba(4, 4, 245, 0.863);
+    background-color: rgb(250, 250, 252);
+    box-shadow: 0 5px 5px rgb(3, 3, 245);
     padding: 10px 0;
     position: sticky;
     top: 0;
@@ -46,6 +46,7 @@ header nav {
     display: none;
     cursor: pointer;
     font-size: 24px;
+    color: blue;
 }
 
 #nav-menu {
@@ -60,15 +61,15 @@ header nav {
 
 #nav-menu li a {
     text-decoration: none;
-    color: #efedf1;
+    color: #2710ee;
     font-weight: 500;
     padding: 8px 15px;
     transition: color 0.3s ease;
 }
 
 #nav-menu li a:hover {
-    color: #010a0f;
-    background-color: rgb(237, 237, 241);
+    color: #f4f6f7;
+    background-color: rgb(3, 3, 247);
 }
 
 #btn {
@@ -86,14 +87,14 @@ header nav {
 }
 .testimonials {
     padding: 50px 20px;
-    background-color: blue;
+    background-color: rgb(251, 251, 252);
     text-align: center;
 }
 
 .testimonials h2 {
     margin-bottom: 20px;
     font-size: 2em;
-    color: rgb(247, 246, 246);
+    color: white;
 }
 
 .testimonial-slider {
@@ -126,7 +127,7 @@ header nav {
 
 .testimonial-slide p {
     font-weight: bold;
-    color: rgb(247, 243, 242);
+    color: rgb(23, 7, 247);
 }
 
 /* Show the first slide initially */
@@ -172,8 +173,8 @@ header nav {
 .hero-btn {
     display: inline-block;
     padding: 15px 30px;
-    background: blue; /* Bright, engaging button color */
-    color: white;
+    background: rgb(247, 247, 250); /* Bright, engaging button color */
+    color: blue;
     font-size: 1.2rem;
     font-weight: bold;
     text-decoration: none;
@@ -326,8 +327,8 @@ header nav {
 
 /* Footer Styles */
 footer {
-    background-color:rgba(0, 0, 0, 0.822);
-    color: #fff;
+    background-color:rgba(4, 20, 250, 0.062);
+    color: #110101;
     padding: 40px 20px;
     font-family: Arial, sans-serif;
 }
@@ -475,7 +476,7 @@ footer {
         position: absolute;
         top: 60px;
         left: 0;
-        background-color: rgba(3, 3, 97, 0.37);
+        background-color: rgba(1, 1, 31, 0.336);
         padding: 10px;
     
     }
