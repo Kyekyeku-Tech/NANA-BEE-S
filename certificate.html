@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certification | Nana-Bee's Foundation</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="nana_bee.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+           color: #f704ce;
+        }
+        .content {
+            max-width: 900px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.37);
+        }
+        .certificate {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .certificate img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            box-shadow: 0px 2px 5px rgb(48, 2, 252);
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="nana_bee.png" alt="Nana-Bee Foundation Logo">
+            </div>
+            
+            <nav>
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <span>Menu</span>
+                    <span>&#9776;</span>
+                </div>
+                <ul id="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="faq.html">FAQ's</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="gallary.html">Gallery</a></li>
+                    <li><a href="Donate.html" id="btm">Donate</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+   
+    </section>
+    <div class="content">
+        <h2>We Are Legally Registered</h2>
+        <p style="color: black;">Nana-Bee's Foundation is a legally recognized organization in Ghana. Below are our official certificates of incorporation and operation:</p>
+
+        <div class="certificate">
+            <h3>Certificate of Incorporation</h3>
+            <img src="cert.jpg" alt="Certificate of Incorporation">
+        </div>
+
+        <div class="certificate">
+            <h3>Business Operating Permit</h3>
+            <img src="operation.jpg" alt="Business Operating Permit">
+        </div>
+
+        <div class="certificate">
+            <h3>Residential Hierarchy Map</h3>
+            <img src="residential.jpg" alt="Residential Hierarchy Map">
+        </div>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <!-- Logo Section -->
+            <div class="footer-logo">
+                <img src="nana_bee.png" alt="The Nelson Foundation Logo">
+            </div>
+    
+            <!-- Navigation Section -->
+            <nav>
+                <ul class="footer-nav">
+                    <li><a href="Donate.html">Donate</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="faq.html">FAQ's</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                </ul>
+            </nav>
+    
+            <!-- Contact Information -->
+            <div class="footer-contact">
+                <p>Let's Connect:</p><br>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Twifo Hemang, Ghana</li>
+                    <li><i class="fas fa-phone-alt"></i>+233246447849</a></li>
+                    <li><i class="fas fa-envelope"></i>support@foundation.online</li>
+                    <li><i class="fab fa-whatsapp"></i>+233 24 644 7849</li>
+                </ul>
+            </div>
+    
+            <!-- Working Hours -->
+            <div class="footer-hours">
+                <i class="fa fa-clock"></i> working Hours</li>
+                <ul>
+                    <li>Monday - Friday</li>
+                    <li>8:00 AM - 5:30 PM</li>
+                </ul>
+            </div>
+    
+            <!-- Newsletter Section -->
+            <div class="newsletter">
+                <h3>Subscribe to Our Newsletter</h3>
+                <p>Subscribe to get updates about our services and offers.</p>
+                <form>
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    
+        <!-- Copyright -->
+        <div class="footer-bottom">
+            <p>Copyright ©2024 Nana-Bee's Foundation. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        function toggleMenu() {
+           var menu = document.getElementById('nav-menu');
+           menu.classList.toggle('mobile-menu');
+       }
+       const faqItems = document.querySelectorAll('.faq-item');
+
+       faqItems.forEach(item => {
+           const header = item.querySelector('.faq-item-header');
+           header.addEventListener('click', () => {
+               item.classList.toggle('active');
+           });
+       });
+   </script>
+</body>
+</html>
