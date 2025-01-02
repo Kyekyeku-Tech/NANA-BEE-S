@@ -596,3 +596,22 @@ body {
 .contact-form p a:hover {
     text-decoration: underline;
 }
+#view-certificates {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.view-certificate-button {
+    background-color: #f807e4;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.view-certificate-button:hover {
+    background-color: #f5cb0e;
+}
