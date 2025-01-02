@@ -12,6 +12,7 @@
         /* Modern Hero Section */
         .hero-section {
             background-size: cover;
+            background: linear-gradient(to right, #1f08ee, #b848ff);
             background-position: center;
             color: white;
             text-align: center;
@@ -19,6 +20,9 @@
             position: relative;
             z-index: 1;
         }
+    
+
+
 
         .hero-section::after {
             content: '';
@@ -37,10 +41,19 @@
             margin-bottom: 15px;
         }
 
-        .hero-section p {
-            font-size: 1.5em;
-            font-weight: 300;
-        }
+        .hero-section h1, .hero-section p {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1.2s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
         /* Modern About Us Section */
         .about-us {
@@ -75,8 +88,13 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-        }
+            display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px;
+}
 
+        
+    
         .blog-card {
             background-color: white;
             border-radius: 15px;
@@ -89,8 +107,10 @@
         }
 
         .blog-card:hover {
-            transform: translateY(-10px);
-        }
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
 
         .blog-card img {
             width: 100%;
@@ -124,6 +144,46 @@
         .next-btn:hover, .prev-btn:hover {
             background-color: #b848ff;
         }
+        .workshop-report, .bog-update {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.workshop-report h2, .bog-update h2 {
+    font-size: 2em;
+    color: #1f08ee;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.workshop-report h3, .bog-update h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.report-details p,
+.workshop-report p, .bog-update p, .bog-update ol {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.6;
+}
+
+.workshop-report ul, .bog-update ul {
+    list-style: disc;
+    padding-left: 20px;
+    color: #666;
+}
+
+.workshop-report ul li, .bog-update ol {
+    margin-bottom: 8px;
+}
+
 
     
     </style>
@@ -164,23 +224,114 @@
         <p>Nana-Bee's Foundation is dedicated to supporting orphans, the needy, and anyone in need of assistance. Through our initiatives, we aim to create a brighter future for individuals and communities by providing resources, opportunities, and a network of care and support. Together, we strive to make a difference, one life at a time.</p>
         <img src="nana_bee.png" alt="Team of The Nelson Foundation">
     </section>
-
+    <section class="workshop-report">
+        <h2>Nana B Foundation Volunteer Training Workshop</h2>
+        <div class="report-details">
+            <p><strong>Date:</strong> (Add the date here)</p>
+            <p><strong>Time:</strong> 12:00 pm - 5:00 pm</p>
+            <p><strong>Duration:</strong> 5 hours</p>
+        </div>
+        <h3>Objective:</h3>
+        <p>The Nana B Foundation organized a day-long workshop training for its volunteers, focusing on enhancing their skills in accessing and supporting orphaned and vulnerable individuals.</p>
+    
+        <h3>Summary:</h3>
+        <p>The workshop commenced with an address by the CEO, who emphasized the importance of dedication and compassion in impacting the lives of vulnerable persons. The CEO reiterated the foundation's commitment to supporting young vulnerable individuals and encouraged volunteers to make a positive difference through their contributions.</p>
+    
+        <h3>Training Sessions:</h3>
+        <p>The main facilitator, Rexford, led the training sessions, which covered:</p>
+        <ul>
+            <li>Screening and assessment of clients (orphans and vulnerable persons)</li>
+            <li>Registration processes for orphans and vulnerable individuals</li>
+        </ul>
+    
+        <h3>Outcomes:</h3>
+        <p>The workshop aimed to equip volunteers with the necessary skills and knowledge to effectively support the foundation's mission. The training sessions were interactive, and participants engaged actively with the facilitator.</p>
+    
+        <h3>Conclusion:</h3>
+        <p>The Nana B Foundation Volunteer Training Workshop was a success, providing valuable insights and practical skills for the volunteers. The foundation remains committed to its mission of supporting vulnerable individuals and looks forward to continuing its work with the help of its dedicated volunteers.</p>
+    
+        <h3>Recommendations:</h3>
+        <ul>
+            <li>Regular training sessions to enhance volunteers' skills and knowledge</li>
+            <li>Continuous monitoring and evaluation of the foundation's programs and services</li>
+        </ul>
+    </section>
+    <section class="bog-update">
+        <h2>Update and Action Plan from the BOG Meeting</h2>
+    
+        <h3>Introduction</h3>
+        <p>We should inform the Overlord of the land about the foundation.</p>
+    
+        <h3>Project Timeline</h3>
+        <p>To ensure a thorough planning process, the Board of Governors proposes postponing the launch to the first quarter of next year.</p>
+    
+        <h3>Administrative Tasks</h3>
+        <p>To be completed within the first quarter:</p>
+        <ul>
+            <li>Furnished office space</li>
+            <li>Obtain operating permits</li>
+            <li>Register the foundation</li>
+            <li>Define board members' roles and responsibilities</li>
+            <li>Schedule board meetings</li>
+        </ul>
+    
+        <h3>Donations and Support</h3>
+        <p><strong>Nana Ayebeng</strong> has donated 500 to the foundation.</p>
+    
+        <h3>Financial Planning</h3>
+        <ul>
+            <li>Draw up a budget for office expenses</li>
+            <li>Explore sources of funding</li>
+            <li>Seek support from:
+                <ul>
+                    <li>Ourselves (initial funding)</li>
+                    <li>Letters to connected individuals</li>
+                    <li>Written proposals</li>
+                </ul>
+            </li>
+        </ul>
+    
+        <h3>Launch Timeline</h3>
+        <ul>
+            <li>The Executive Committee (EC) will determine the launch date within the first quarter.</li>
+            <li>February is exempted.</li>
+        </ul>
+    
+        <h3>Action Items</h3>
+        <ol>
+            <li>Inform the Overlord of the land</li>
+            <li>Secure office space</li>
+            <li>Obtain permits and register the foundation</li>
+            <li>Define board roles and schedule meetings</li>
+            <li>Create a budget and explore funding sources</li>
+            <li>Draft proposals and seek support</li>
+            <li>EC to determine launch date</li>
+        </ol>
+    </section>
+    
+    
     <!-- Blog Post Section -->
     <section class="blog-post">
         <h2>Our Latest Work</h2>
         <article>
+            
             <div class="blog-card">
-                <img src="https://th.bing.com/th/id/OIP.Z49LScyDyiFSu0pAb0saVAHaEK?w=672&h=378&rs=1&pid=ImgDetMain" alt="Blog Post Image">
-                <h3>Post Title 1</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisi vel consectetur...</p>
-            </div>
-            <div class="blog-card">
-                <img src="https://th.bing.com/th/id/OIP.Z49LScyDyiFSu0pAb0saVAHaEK?w=672&h=378&rs=1&pid=ImgDetMain" alt="Blog Post Image">
+                <img src="ayebeng_group.jpg" alt="Blog Post Image">
                 <h3>Post Title 2</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisi vel consectetur...</p>
             </div>
             <div class="blog-card">
-                <img src="https://th.bing.com/th/id/OIP.Z49LScyDyiFSu0pAb0saVAHaEK?w=672&h=378&rs=1&pid=ImgDetMain" alt="Blog Post Image">
+                <img src="ayebeng_group.jpg" alt="Blog Post Image">
+                <h3>Post Title 2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisi vel consectetur...</p>
+            </div>
+            <div class="blog-card">
+                <img src="ayebeng_group.jpg" alt="Blog Post Image">
+                <h3>Post Title 2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisi vel consectetur...</p>
+            </div>
+            <div class="blog-card">
+                <img src="ayebeng_group.jpg" alt="Blog Post Image">
                 <h3>Post Title 3</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisi vel consectetur...</p>
             </div>
@@ -294,12 +445,12 @@ const blogPosts = [
     {
         title: "Post Title 1",
         content: "Content for Post 1...",
-        image: "https://th.bing.com/th/id/OIP.Z49LScyDyiFSu0pAb0saVAHaEK?w=672&h=378&rs=1&pid=ImgDetMain"
+        image: "https://nanabeesfoundation.org/ayebeng_group.jpg"
     },
     {
         title: "Post Title 2",
         content: "Content for Post 2...",
-        image: "https://i.postimg.cc/MTGZYRWF/tnf-hero.jpg"
+        image: "https://nanabeesfoundation.org/ayebeng_group.jpg"
     }
     // Add more posts as needed
 ];

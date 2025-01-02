@@ -203,6 +203,69 @@
     margin: 10px 0;
   }
 }
+.certificates-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.certificates-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #057df5;
+}
+
+.certificates-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.certificate-item {
+    position: relative;
+    width: 300px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificate-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.certificate-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 15px;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    border-radius: 0 0 15px 15px;
+}
+
+.certificate-item:hover .overlay {
+    transform: translateY(0);
+}
+
+.overlay p {
+    margin: 0;
+    font-size: 1.2rem;
+}
 
     </style>
 </head>
@@ -224,6 +287,7 @@
                     <li><a href="#contact">Contact</a></li>
                     <li><a href="blog.html">Blog</a></li>
                     <li><a href="gallary.html">Gallery</a></li>
+                    <li><a href="#certificat">Our Cert</a></li>
                     <li><a href="Donate.html" id="btm">Donate</a></li>
                 </ul>
             </nav>
@@ -314,6 +378,29 @@
             </div>
         </div>
     </section> 
+    <div class="certificates-section" id="certificate">
+        <h2>Our Certifications and Licenses</h2>
+        <div class="certificates-grid">
+            <div class="certificate-item">
+                <img src="nana_bee.png" alt="Certificate of Operation">
+                <div class="overlay">
+                    <p>Certificate of Operation</p>
+                </div>
+            </div>
+            <div class="certificate-item">
+                <img src="nana_bee.png" alt="Operation Permit">
+                <div class="overlay">
+                    <p>Operation Permit</p>
+                </div>
+            </div>
+            <div class="certificate-item">
+                <img src="nana_bee.png" alt="License">
+                <div class="overlay">
+                    <p>Official License</p>
+                </div>
+            </div>
+        </div>
+    </div>
     
     <div class="contact-container" id="contact">
         <form class="contact-form" action="submit_form.php" method="POST">
@@ -381,6 +468,19 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
     </div>
     <script>
+        document.querySelectorAll('.certificate-item img').forEach(img => {
+    img.addEventListener('click', () => {
+        const modal = document.createElement('div');
+        modal.className = 'modal';
+        modal.innerHTML = `
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <img src="${img.src}" alt="${img.alt}">
+            </div>`;
+        document.body.appendChild(modal);
+        modal.querySelector('.close').onclick = () => modal.remove();
+    });
+});
          // Counter animation function
   function animateCounters() {
     const counters = document.querySelectorAll('.prop-obj');
