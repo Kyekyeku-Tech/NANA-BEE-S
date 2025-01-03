@@ -189,7 +189,7 @@ header nav {
 }
 
 /* About Section */
-.about {
+.about, .section_mission {
     max-width: 1200px;
     margin: 50px auto;
     padding: 20px;
