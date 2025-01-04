@@ -22,7 +22,7 @@ body {
 }
 /* Header and Navigation */
 header {
-    background-color: rgb(250, 250, 252);
+    background-color: rgba(241, 5, 222, 0.829);
     box-shadow: 0 5px 5px rgb(3, 3, 245);
     padding: 10px 0;
     position: sticky;
@@ -46,7 +46,7 @@ header nav {
     display: none;
     cursor: pointer;
     font-size: 18px;
-    color: blue;
+    color: rgb(247, 247, 248);
 }
 
 #nav-menu {
@@ -62,7 +62,7 @@ header nav {
 
 #nav-menu li a {
     text-decoration: none;
-    color: #2710ee;
+    color: #fbfbfd;
     font-weight: 500;
     padding: 8px 15px;
     transition: color 0.3s ease;
@@ -480,7 +480,7 @@ footer {
         position: absolute;
         top: 60px;
         left: 0;
-        background-color: rgba(1, 1, 31, 0.336);
+        background-color: rgba(0, 0, 8, 0.336);
         padding: 10px;
     
     }
