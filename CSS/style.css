@@ -45,7 +45,7 @@ header nav {
 .menu-toggle {
     display: none;
     cursor: pointer;
-    font-size: 24px;
+    font-size: 18px;
     color: blue;
 }
 
@@ -58,6 +58,7 @@ header nav {
 #nav-menu li {
     margin-left: 0px;
 }
+
 
 #nav-menu li a {
     text-decoration: none;
