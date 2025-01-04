@@ -7,11 +7,12 @@
     <title>Nana-Bee's Foundation</title>
     <link rel="stylesheet" href="CSS/style.css">
   <style>
-    
+    body {
+        background-image: url('https://nana-beesfoundation.org/hero3.jpg'); 
+    }
 
 .container {
-    background-image: url('https://nana-beesfoundation.org/hero.webp');
-    background-color: blue;
+    background-color: transparent;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 10px 10px rgb(2, 2, 245);
@@ -70,7 +71,124 @@ button:hover {
 #displayAmount {
     color: rgb(252, 187, 7);
 }
+footer {
+    background-color:rgb(190, 190, 192);
+    color: #110101;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+}
 
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.footer-logo img {
+    max-width: 150px;
+    margin-bottom: 20px;
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-nav ul li {
+    margin-bottom: 10px;
+}
+
+.footer-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-nav ul li a:hover {
+    color: blue;
+}
+
+.footer-contact ul, 
+.footer-hours ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-contact ul li,
+.footer-hours ul li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-contact ul li i,
+.footer-hours ul li i {
+    color: blue;
+}
+
+.newsletter h3 {
+    margin-bottom: 10px;
+}
+
+.newsletter form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    border: 2px solid blue;
+}
+
+.newsletter input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    flex: 1;
+}
+
+.newsletter button {
+    padding: 10px 20px;
+    border: none;
+    background-color: blue;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.newsletter button:hover {
+    background-color: #fac105;
+    color: black;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #080000;
+    padding-top: 20px;
+    font-size: 0.9rem;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-contact ul, 
+    .footer-hours ul {
+        align-items: center;
+    }
+    
+}
 /* Responsive Container */
 
 
@@ -123,6 +241,7 @@ button:hover {
             <button type="button" id="acceptButton" onclick="acceptDonation()">Accept</button>
             <button type="button" id="donateButton" style="display: none;" onclick="makeDonation()">Donate</button>
         </form>
+        
     </div>
 </section>    
 <section class="testimonials">

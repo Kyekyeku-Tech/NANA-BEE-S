@@ -22,7 +22,7 @@ body {
 }
 /* Header and Navigation */
 header {
-    background-color: rgba(241, 5, 222, 0.829);
+    background-color: rgb(250, 7, 169);
     box-shadow: 0 5px 5px rgb(3, 3, 245);
     padding: 10px 0;
     position: sticky;
@@ -141,7 +141,7 @@ header nav {
 .hero {
     position: relative;
     height: 100vh;
-    background: url('https://1.bp.blogspot.com/-0jj9GX2bwFY/XV03C3FoaKI/AAAAAAAASx0/rRvwXXmteTkwVvUnPoCEwUWH2fIwt9mSgCLcBGAs/s1600/DSC03175.JPG') no-repeat center center/cover;
+    background: url('https://nana-beesfoundation.org/hero3.jpg') no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -603,7 +603,7 @@ body {
 }
 
 .view-certificate-button {
-    background-color: #f807e4;
+    background-color: rgb(250, 7, 169);
     color: white;
     border: none;
     padding: 15px 30px;
