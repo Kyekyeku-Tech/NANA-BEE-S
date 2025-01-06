@@ -12,9 +12,9 @@
         /* Modern Hero Section */
         .hero-section {
             background-size: cover;
-            background: linear-gradient(to right, #1f08ee, #b848ff);
+
             background-position: center;
-            color: white;
+            
             text-align: center;
             padding: 10px 20px;
             position: relative;
@@ -31,7 +31,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgb(10, 6, 252);
+            background-color: #2d07b86c;
             z-index: -1;
         }
 
@@ -59,8 +59,7 @@
         .about-us {
             padding: 60px 20px;
             text-align: center;
-            background-color: #f8f3f3;
-            color: rgb(7, 0, 0);
+            background-color: transparent;
         }
 
         .about-us img {
@@ -68,19 +67,19 @@
             max-width: 600px;
             margin-top: 20px;
             border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.479);
+            box-shadow: 0 8px 20px rgba(43, 6, 252, 0.918);
         }
 
         /* Blog Posts Section */
         .blog-post {
             padding: 60px 20px;
-            background-color: #f7f7f7;
+            background-color: transparent;
         }
 
         .blog-post h2 {
             text-align: center;
             font-size: 2.5em;
-            color: #333;
+            
             margin-bottom: 30px;
         }
 
@@ -96,10 +95,10 @@
         
     
         .blog-card {
-            background-color: white;
+            background-color: transparent;
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 15px rgba(3, 18, 236, 0.904);
             width: 300px;
             margin: 15px;
             text-align: center;
@@ -121,13 +120,13 @@
         .blog-card h3 {
             padding: 15px;
             font-size: 1.5em;
-            color: #333;
+            
         }
 
         .blog-card p {
             padding: 0 15px 15px;
             font-size: 1em;
-            color: #666;
+            
         }
 
         .next-btn, .prev-btn {
@@ -146,7 +145,7 @@
         }
         .workshop-report, .bog-update {
     padding: 40px 20px;
-    background-color: #f9f9f9;
+    background-color: transparent;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     margin: 20px auto;
@@ -162,7 +161,6 @@
 
 .workshop-report h3, .bog-update h3 {
     font-size: 1.5em;
-    color: #333;
     margin-top: 20px;
     margin-bottom: 10px;
 }
@@ -170,14 +168,14 @@
 .report-details p,
 .workshop-report p, .bog-update p, .bog-update ol {
     font-size: 1em;
-    color: #666;
+
     line-height: 1.6;
 }
 
 .workshop-report ul, .bog-update ul {
     list-style: disc;
     padding-left: 20px;
-    color: #666;
+
 }
 
 .workshop-report ul li, .bog-update ol {
@@ -194,7 +192,10 @@
             <div class="logo">
                 <img src="nana_bee.png" alt="Nana-Bee Foundation Logo">
             </div>
-            
+            <button id="theme-toggle" class="modern-theme-btn">
+                <img src="https://th.bing.com/th/id/R.c0c31958cbffd57076b5368cc035322c?rik=MQrTR6MBNvVCqA&pid=ImgRaw&r=0" alt="Sun" class="icon" id="sun-icon">
+                <img src="https://th.bing.com/th/id/OIP.aGGFesr5h9HumhhYbvBosAHaHa?rs=1&pid=ImgDetMain" alt="Moon" class="icon" id="moon-icon">
+            </button>
             <nav>
                 <div class="menu-toggle" onclick="toggleMenu()">
                     <span>Menu</span>
@@ -493,7 +494,36 @@ function toggleMenu() {
         showSlide(currentSlide);
     }
 
-    setInterval(nextSlide, 3000); // 
+    setInterval(nextSlide, 3000); //
+    const toggleButton = document.getElementById('theme-toggle');
+        const sunIcon = document.getElementById('sun-icon');
+        const moonIcon = document.getElementById('moon-icon');
+        const body = document.body;
+
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('night-theme');
+
+            if (body.classList.contains('night-theme')) {
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+            } else {
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+            }
+
+            // Save preference in localStorage
+            const theme = body.classList.contains('night-theme') ? 'night' : 'day';
+            localStorage.setItem('theme', theme);
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('theme') === 'night') {
+                body.classList.add('night-theme');
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+            }
+        });
+ 
     </script>
 </body>
 </html>

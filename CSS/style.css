@@ -9,7 +9,6 @@
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    color: #f1ebeb;
     background-color: #f1f1f7;
     background-size: contain;
     padding: 0;
@@ -88,14 +87,14 @@ header nav {
 }
 .testimonials {
     padding: 50px 20px;
-    background-color: rgb(251, 251, 252);
+    background-color: transparent;
     text-align: center;
 }
 
 .testimonials h2 {
     margin-bottom: 20px;
     font-size: 2em;
-    color: white;
+    
 }
 
 .testimonial-slider {
@@ -123,7 +122,7 @@ header nav {
     font-size: 1.2em;
     font-style: italic;
     margin-bottom: 10px;
-    color: #0c0c0c;
+    
 }
 
 .testimonial-slide p {
@@ -329,7 +328,7 @@ header nav {
 /* Footer Styles */
 footer {
     background-color:rgba(4, 20, 250, 0.062);
-    color: #110101;
+    
     padding: 40px 20px;
     font-family: Arial, sans-serif;
 }
@@ -358,7 +357,7 @@ footer {
 }
 
 .footer-nav ul li a {
-    color: #fff;
+   
     text-decoration: none;
     transition: color 0.3s;
 }
@@ -409,7 +408,7 @@ footer {
     padding: 10px 20px;
     border: none;
     background-color: blue;
-    color: #fff;
+  
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s;
@@ -531,17 +530,16 @@ body {
 }
 
 .contact-form {
-    background: white;
+    background: transparent;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(8, 4, 240, 0.822);
     width: 100%;
     max-width: 500px;
     text-align: center;
 }
 
 .contact-form h2 {
-    color: #333;
     font-size: 30px;
     margin-bottom: 20px;
     font-weight: 600;
@@ -616,3 +614,55 @@ body {
 .view-certificate-button:hover {
     background-color: #f5cb0e;
 }
+:root {
+    --bg-color: white;
+    --text-color: black;
+    --btn-bg-color: #f5f7f8; /* Primary blue color */
+    --btn-hover-bg-color: #0056b3; /* Darker blue */
+    --btn-shadow-color: rgba(231, 247, 18, 0.911);
+  }
+  
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.5s, color 0.5s;
+    font-family: Arial, sans-serif;
+  }
+  
+  .modern-theme-btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 50px; /* Rounded corners for a sleek look */
+    background-color: var(--btn-bg-color);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px; /* Adds space between the icon and text */
+  }
+  
+  .modern-theme-btn .icon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .modern-theme-btn:hover {
+    background-color: var(--btn-hover-bg-color);
+    box-shadow: 0 8px 25px var(--btn-shadow-color);
+  }
+  
+  .night-theme {
+    background-color: black; /* Full background dark mode */
+    color: white; /* Text color for night mode */
+  }
+  
+  .night-theme .modern-theme-btn {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .night-theme .icon {
+    filter: invert(1); /* Invert colors for night mode */
+  }

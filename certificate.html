@@ -12,14 +12,14 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-           color: #f704ce;
+           
         }
         .content {
             max-width: 900px;
             margin: 20px auto;
-            background: white;
+            background: transparent;
             padding: 20px;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.37);
+            box-shadow: 0px 2px 5px rgba(46, 2, 241, 0.438);
         }
         .certificate {
             text-align: center;
@@ -40,7 +40,10 @@
             <div class="logo">
                 <img src="nana_bee.png" alt="Nana-Bee Foundation Logo">
             </div>
-            
+            <button id="theme-toggle" class="modern-theme-btn">
+                <img src="https://th.bing.com/th/id/R.c0c31958cbffd57076b5368cc035322c?rik=MQrTR6MBNvVCqA&pid=ImgRaw&r=0" alt="Sun" class="icon" id="sun-icon">
+                <img src="https://th.bing.com/th/id/OIP.aGGFesr5h9HumhhYbvBosAHaHa?rs=1&pid=ImgDetMain" alt="Moon" class="icon" id="moon-icon">
+            </button>
             <nav>
                 <div class="menu-toggle" onclick="toggleMenu()">
                     <span>Menu</span>
@@ -62,7 +65,7 @@
     </section>
     <div class="content">
         <h2>We Are Legally Registered</h2>
-        <p style="color: black;">Nana-Bee's Foundation is a legally recognized organization in Ghana. Below are our official certificates of incorporation and operation:</p>
+        <p>Nana-Bee's Foundation is a legally recognized organization in Ghana. Below are our official certificates of incorporation and operation:</p>
 
         <div class="certificate">
             <h3>Certificate of Incorporation</h3>
@@ -146,6 +149,35 @@
                item.classList.toggle('active');
            });
        });
+       const toggleButton = document.getElementById('theme-toggle');
+        const sunIcon = document.getElementById('sun-icon');
+        const moonIcon = document.getElementById('moon-icon');
+        const body = document.body;
+
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('night-theme');
+
+            if (body.classList.contains('night-theme')) {
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+            } else {
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+            }
+
+            // Save preference in localStorage
+            const theme = body.classList.contains('night-theme') ? 'night' : 'day';
+            localStorage.setItem('theme', theme);
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('theme') === 'night') {
+                body.classList.add('night-theme');
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+            }
+        });
+
    </script>
 </body>
 </html>

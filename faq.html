@@ -19,21 +19,20 @@
             max-width: 800px;
             margin: 50px auto;
             padding: 20px;
-            background-color: white;
+            background-color: transparent;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .faq-container h1 {
-            font-size: 36px;
-            color: #333;
+            font-size: 36px; 
             text-align: center;
             margin-bottom: 30px;
             font-weight: 600;
         }
 
         .faq-item {
-            background-color: #fff;
+            background-color: transparent;
             border: 2px solid rgb(1, 0, 7);
             border-radius: 5px;
             margin-bottom: 10px;
@@ -43,7 +42,7 @@
             padding: 15px;
             font-size: 18px;
             font-weight: bold;
-            color: #333;
+
             cursor: pointer;
             background-color: #0818f7;
             color: white;
@@ -57,10 +56,10 @@
 
         .faq-item-content {
             padding: 15px;
-            background-color: #f9f9f9;
+            background-color: transparent;
             display: none;
             font-size: 16px;
-            color: #555;
+            
         }
 
         .faq-item.active .faq-item-content {
@@ -91,6 +90,12 @@
         <div class="header-container">
             <div class="logo">
                 <img src="nana_bee.png" alt="The Nelson Foundation Logo">
+            </div>
+            <div>
+                <button id="theme-toggle" class="modern-theme-btn">
+                    <img src="https://th.bing.com/th/id/R.c0c31958cbffd57076b5368cc035322c?rik=MQrTR6MBNvVCqA&pid=ImgRaw&r=0" alt="Sun" class="icon" id="sun-icon">
+                    <img src="https://th.bing.com/th/id/OIP.aGGFesr5h9HumhhYbvBosAHaHa?rs=1&pid=ImgDetMain" alt="Moon" class="icon" id="moon-icon">
+                </button>
             </div>
             <nav>
                 <div class="menu-toggle" onclick="toggleMenu()">
@@ -184,7 +189,6 @@
                 <p>Yes! We welcome volunteers to help us with various tasks such as event coordination, outreach programs, and more. If you’re interested, please visit our <a href="contact.html">Contact Us</a> page for volunteer opportunities.</p>
             </div>
         </div>
-    </div>
         <div class="faq-item">
             <div class="faq-item-header">
                 What types of support does Nana-Bee's Foundation provide?
@@ -193,7 +197,6 @@
                 <p>Nana-Bee's Foundation offers counseling, career guidance, educational programs,Food, shelter and advocacy services to empower Orphanages. We also provide vocational training and assistance in securing employment.</p>
             </div>
         </div>
-
         <div class="faq-item">
             <div class="faq-item-header">
                 How can I stay updated on Nana-Bee's Foundation’s activities?
@@ -347,6 +350,35 @@
                 item.classList.toggle('active');
             });
         });
+        const toggleButton = document.getElementById('theme-toggle');
+        const sunIcon = document.getElementById('sun-icon');
+        const moonIcon = document.getElementById('moon-icon');
+        const body = document.body;
+
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('night-theme');
+
+            if (body.classList.contains('night-theme')) {
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+            } else {
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+            }
+
+            // Save preference in localStorage
+            const theme = body.classList.contains('night-theme') ? 'night' : 'day';
+            localStorage.setItem('theme', theme);
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('theme') === 'night') {
+                body.classList.add('night-theme');
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+            }
+        });
+
     </script>
 </body>
 </html>

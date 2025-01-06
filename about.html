@@ -11,7 +11,6 @@
          body {
             font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    color: rgb(247, 247, 250);
     background-image: url('https://nana-beesfoundation.netlify.app/hero.web');
     background-size: contain;
     padding: 0;
@@ -20,7 +19,7 @@
         .section {
             padding: 40px;
             margin-top: 80px;
-            background: blue;
+            background: transparent;
             border-radius: 10px;
             box-shadow: 0 12px 10px rgba(0, 0, 0, 0.719);
             transition: all 0.3s ease;
@@ -36,7 +35,7 @@
         .counters-section-type-2 {
             background-color: #057df5;
             padding: 60px 0;
-            color: white;
+            
         }
 
         .counter-box {
@@ -140,7 +139,7 @@
         }
         
     .counters-section-type-2 {
-  background-color: #fafafaa9; /* Light gray background */
+  background-color: transparent; /* Light gray background */
   padding: 50px 0;
 }
 
@@ -164,7 +163,6 @@
 
 .title-counter {
   font-size: 18px;
-  color: blue;
   font-weight: bold;
   margin-bottom: 10px;
   text-align: center; /* Center text */
@@ -172,7 +170,6 @@
 
 .prop-obj {
   font-size: 48px;
-  color: blue;
   font-weight: 600;
   text-align: center; /* Center number */
 }
@@ -262,6 +259,12 @@
         <div class="header-container">
             <div class="logo">
                 <img src="nana_bee.png" alt="Nana-Bee's Foundation Logo">
+            </div>
+            <div>
+                <button id="theme-toggle" class="modern-theme-btn">
+                    <img src="https://th.bing.com/th/id/R.c0c31958cbffd57076b5368cc035322c?rik=MQrTR6MBNvVCqA&pid=ImgRaw&r=0" alt="Sun" class="icon" id="sun-icon">
+                    <img src="https://th.bing.com/th/id/OIP.aGGFesr5h9HumhhYbvBosAHaHa?rs=1&pid=ImgDetMain" alt="Moon" class="icon" id="moon-icon">
+                </button>
             </div>
             <nav>
                 <div class="menu-toggle" onclick="toggleMenu()">
@@ -556,6 +559,34 @@
     }
 
     setInterval(nextSlide, 3000); // Change slide every 3 seconds
+    const toggleButton = document.getElementById('theme-toggle');
+        const sunIcon = document.getElementById('sun-icon');
+        const moonIcon = document.getElementById('moon-icon');
+        const body = document.body;
+
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('night-theme');
+
+            if (body.classList.contains('night-theme')) {
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+            } else {
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+            }
+
+            // Save preference in localStorage
+            const theme = body.classList.contains('night-theme') ? 'night' : 'day';
+            localStorage.setItem('theme', theme);
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('theme') === 'night') {
+                body.classList.add('night-theme');
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+            }
+        });
     </script>
 </body>
 </html>
