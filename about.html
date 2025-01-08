@@ -82,15 +82,7 @@
         }
 
         @media (max-width: 768px) {
-            nav ul {
-                display: none;
-            }
-
-            .menu-toggle {
-                display: block;
-                cursor: pointer;
-                font-size: 18px;
-            }
+            
 
             .menu-toggle span {
                 color: rgb(241, 241, 245);
@@ -188,69 +180,7 @@
     margin: 10px 0;
   }
 }
-.certificates-section {
-    text-align: center;
-    padding: 50px 20px;
-    background-color: #f9f9f9;
-    color: #333;
-}
 
-.certificates-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    color: #057df5;
-}
-
-.certificates-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.certificate-item {
-    position: relative;
-    width: 300px;
-    overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.certificate-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-}
-
-.certificate-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 15px;
-}
-
-.overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.7);
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    transform: translateY(100%);
-    transition: transform 0.3s ease;
-    border-radius: 0 0 15px 15px;
-}
-
-.certificate-item:hover .overlay {
-    transform: translateY(0);
-}
-
-.overlay p {
-    margin: 0;
-    font-size: 1.2rem;
-}
 
     </style>
 </head>
@@ -268,18 +198,17 @@
             </div>
             <nav>
                 <div class="menu-toggle" onclick="toggleMenu()">
-                    <span>Menu</span>
+                    <span></span>
                     <span>&#9776;</span>
                 </div>
                 <ul id="nav-menu">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="faq.html">FAQ's</a></li>
-                    <li><a href="#contact">Contact</a></li>
                     <li><a href="blog.html">Blog</a></li>
+                    <li><a href="faq.html">FAQ's</a></li>
                     <li><a href="gallary.html">Gallery</a></li>
-                    <li><a href="#certificat">Our Cert</a></li>
+                    <li><a href="#contact">Contact</a></li>
                     <li><a href="Donate.html" id="btm">Donate</a></li>
+                    <li><a href="certificate.html">Certificates</a></li>
                 </ul>
             </nav>
         </div>
@@ -403,30 +332,6 @@
         </div>
     </div>
 </section>
-    <div class="certificates-section" id="certificate">
-        <h2>Our Certifications and Licenses</h2>
-        <div class="certificates-grid">
-            <div class="certificate-item">
-                <img src="cert.jpg" alt="Certificate of Operation">
-                <div class="overlay">
-                    <p>Certificate of Operation</p>
-                </div>
-            </div>
-            <div class="certificate-item">
-                <img src="operation.jpg" alt="Operation Permit">
-                <div class="overlay">
-                    <p>Operation Permit</p>
-                </div>
-            </div>
-            <div class="certificate-item">
-                <img src="residential.jpg" alt="License">
-                <div class="overlay">
-                    <p>Residential Hierarchy Map</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    
     <div class="contact-container" id="contact">
         <form class="contact-form" action="submit_form.php" method="POST">
             <h2>Contact Us</h2>
@@ -448,17 +353,32 @@
             <!-- Navigation Section -->
             <nav>
                 <ul class="footer-nav">
-                    <li><a href="Donate.html">Donate</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="faq.html">FAQ's</a></li>
-                    <li><a href="gallary.html">Gallery</a></li>
+                   <a href="Donate.html">Donate</a> | <a href="about.html">About</a> | <a href="blog.html">Blog</a> | <a href="faq.html">FAQ's</a> | <a href="gallary.html">Gallery</a>
                 </ul>
             </nav>
-    
+            <div class="social-icons">
+                <a href="https://web.facebook.com/groups/nanabeesfoundation/" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" width="30">
+                </a>
+                <a href="#" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" width="30">
+                </a>
+                <a href="#" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram" width="30">
+                </a>
+                <a href="#" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733561.png" alt="LinkedIn" width="30">
+                </a>
+                <a href="#" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" alt="TikTok" width="30">
+                </a>
+            </div>
+            
+            
             <!-- Contact Information -->
             <div class="footer-contact">
                 <p>Let's Connect:</p><br>
+                
                 <ul>
                     <li><i class="fas fa-map-marker-alt"></i> Twifo Hemang, Ghana</li>
                     <li><i class="fas fa-phone-alt"></i>+233246447849</a></li>
