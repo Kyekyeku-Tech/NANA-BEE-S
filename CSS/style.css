@@ -408,7 +408,7 @@ footer {
     padding: 10px 20px;
     border: none;
     background-color: blue;
-  
+  color: #f1f1f7;
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s;
