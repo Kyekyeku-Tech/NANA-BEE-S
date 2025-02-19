@@ -21,7 +21,7 @@ body {
 }
 /* Header and Navigation */
 header {
-    background-color: rgb(250, 7, 169);
+    background-color: rgba(248, 247, 248, 0.137);
     box-shadow: 0 5px 5px rgb(3, 3, 245);
     padding: 10px 0;
     position: sticky;
@@ -45,7 +45,7 @@ header nav {
     display: none;
     cursor: pointer;
     font-size: 18px;
-    color: rgb(247, 247, 248);
+    color: rgb(8, 8, 250);
 }
 
 #nav-menu {
@@ -61,7 +61,7 @@ header nav {
 
 #nav-menu li a {
     text-decoration: none;
-    color: #fbfbfd;
+    color: #1606fa;
     font-weight: 500;
     padding: 8px 15px;
     transition: color 0.3s ease;
@@ -69,7 +69,7 @@ header nav {
 
 #nav-menu li a:hover {
     color: #f4f6f7;
-    background-color: rgb(3, 3, 247);
+    background-color: rgb(247, 3, 194);
 }
 
 #btn {
@@ -479,7 +479,7 @@ footer {
         position: absolute;
         top: 60px;
         left: 0;
-        background-color: rgba(0, 0, 8, 0.336);
+        background-color: rgba(100, 100, 104, 0.199);
         padding: 10px;
     
     }
