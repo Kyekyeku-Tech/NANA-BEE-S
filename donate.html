@@ -7,74 +7,114 @@
     <title>Nana-Bee's Foundation</title>
     <link rel="stylesheet" href="CSS/style.css">
   <style>
-   
-
-
-.container {
-    background-color: rgba(8, 8, 8, 0.74);
+       
+       .container {
+    
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 10px 10px rgb(2, 2, 245);
     max-width: 400px;
     margin: 100px auto;
     text-align: center;
-    color: #fff;
 }
-
-
-form {
-    margin-top: 20px;
-}
-
-label {
-    display: block;
-    margin-bottom: 8px;
-    text-align: left;
-    color: rgb(252, 187, 7);
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.container input[type="text"], input[type="email"], input[type="number"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    background: #fdfbfb;
-    color: blue;
-    font-size: 16px;
-    
-}
-
-button {
-  padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: rgb(255, 0, 221);
-    color: rgb(253, 252, 252);
-    font-size: 1rem;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #fcf804;
-    color: rgb(0, 0, 8);
-}
-
- 
-
-#displayName, #displayEmail {
-    color:rgb(252, 187, 7);
-}
-
-#displayAmount {
-    color: rgb(252, 187, 7);
-}
-
-  </style>
+h2 {
+            margin-bottom: 15px;
+        }
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .button-group button {
+            background: #fff;
+            border: 2px solid #ddd;
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .button-group button:hover {
+            transform: scale(1.05);
+            border-color: #764ba2;
+        }
+        .button-group button img {
+            width: 140px;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgb(255, 187, 0);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            z-index: 1000;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+        .modal button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: #764ba2;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .modal button:hover {
+            background: #5f05fc;
+        }
+        .modal form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .modal input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #0313f3;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+            transition: 0.3s;
+        }
+        .modal input:focus {
+            border-color: #05000a;
+        }
+        .modal form button {
+            background: #1b02f7;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .modal form button:hover {
+            background: #0bf103;
+            color: #080808;
+        }
+    </style>
 </head>
 <body>
-    <header>
+   <header>
         <div class="header-container">
             <div class="logo">
                 <img src="nana_bee.png" alt="The Nelson Foundation Logo">
@@ -104,143 +144,165 @@ button:hover {
     <script src="https://js.paystack.co/v1/inline.js"></script>
     <div class="container" id="donate">
         <h2> - Donate to Nana-Bee's Foundation -</h2>
-        <form id="donationForm">
-            <label for="username">Your Name:</label>
-            <input type="text" id="username" name="username" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="phoneNumber">Phone Number:</label>
-            <input type="text" id="phoneNumber" name="phoneNumber" required>
-
-            <label for="amount">Amount (GHS):</label>
-            <input type="number" id="amount" name="amount" required>
-
-            <p>
-                I, <span id="displayName"></span> with email: <span id="displayEmail"></span>, agree to donate GHS <span id="displayAmount"></span> to support Nana-Bee Foundation's efforts to help orphanage and needy. I acknowledge that this donation is non-refundable.
-            </p>
-
-            <button type="button" id="acceptButton" onclick="acceptDonation()">Accept</button>
-            <button type="button" id="donateButton" style="display: none;" onclick="makeDonation()">Donate</button>
+        <div class="button-group">
+            <button onclick="showPopup('mtnDetails')">
+                <img src="https://th.bing.com/th?id=OIP.ygnrfYvMgC2-iTvdKPRB-AAAAA&w=333&h=187&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" alt="MTN MoMo">
+            </button>
+            <button onclick="showPopup('paystackForm')">
+                <img src="https://th.bing.com/th?id=OIP.5YMLaME3IM0xOl1sn6unmgHaEH&w=335&h=186&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" alt="Paystack">
+            </button>
+            <button onclick="showPopup('merchantDetails')">
+                <img src="https://th.bing.com/th/id/OIP.iqFei7KJ5tZs8AmSAiv6AQHaEc?rs=1&pid=ImgDetMain" alt="Merchant ID">
+                <h3 style="color: #f70268;">MERCHANT ID:</h3>
+            </button>
+        </div>
+    </div>
+    
+    <div class="overlay" id="overlay" onclick="closePopup()"></div>
+    
+    <div id="mtnDetails" class="modal">
+        <h3>MTN MoMo Payment</h3><br>
+        <p><strong>Name:</strong> FRIMPZ VENTURES</p>
+        <p><strong>Number:</strong> 0240059648</p><br>
+        <p>Please send your donation manually via MTN MoMo.</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+    
+    
+    <div id="paystackForm" class="modal">
+        <h3>Pay with Paystack</h3>
+        <form onsubmit="event.preventDefault(); payWithPaystack();">
+            <input type="text" id="fullname" placeholder="Full Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="number" id="amount" placeholder="Amount (GHS)" required>
+            <button type="submit">Proceed to Paystack</button>
         </form>
+        <button onclick="closePopup()">Close</button>
+    </div>
+    
+    <div id="merchantDetails" class="modal">
+        <h3>MTN Merchant ID</h3><br>
+        <p><strong>Name:</strong> NANABEES-FOUNDATION</p>
+        <p><strong>Merchant ID:</strong> 241690</p><br>
+        <p>Use this Merchant ID to complete your donation.</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+    </div>
+    <section class="testimonials">
+        <h3 style="color: #fd12ea;">Testimonials</h3>
+        <div class="testimonial-slider">
+            <div class="testimonial-slide">
+                <img src="avatar-2.png" alt="Person 1">
+                <blockquote>
+                    "Nana-Bees Foundation has truly changed my life. Their support has been invaluable."
+                </blockquote>
+                <p>- Helina Boafo</p>
+            </div>
+            <div class="testimonial-slide">
+                <img src="avatar-3.png" alt="Person 2">
+                <blockquote>
+                    "I couldn't be more grateful for the opportunities they've provided me."
+                </blockquote>
+                <p>- Rebecca Arthur</p>
+            </div>
+            <div class="testimonial-slide">
+                <img src="avatar-1.png" alt="Person 3">
+                <blockquote>
+                    "Their dedication and passion are evident in everything they do."
+                </blockquote>
+                <p>- John Boah</p>
+            </div>
+        </div>
+    </section>
+        <div class="contact-container" id="contact">
+            <form class="contact-form" action="submit_form.php" method="POST">
+                <h2>Contact Us</h2>
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+                <p>Have a question? <a href="faq.html">Visit our FAQ</a></p>
+            </form>
+        </div>   
+        <footer>
+            <div class="footer-container">
+                <!-- Logo Section -->
+                <div class="footer-logo">
+                    <img src="nana_bee.png" alt="The Nelson Foundation Logo">
+                </div>
         
-    </div>
-</section>    
-<section class="testimonials">
-    <h3 style="color: #fd12ea;">Testimonials</h3>
-    <div class="testimonial-slider">
-        <div class="testimonial-slide">
-            <img src="avatar-2.png" alt="Person 1">
-            <blockquote>
-                "Nana-Bees Foundation has truly changed my life. Their support has been invaluable."
-            </blockquote>
-            <p>- Helina Boafo</p>
-        </div>
-        <div class="testimonial-slide">
-            <img src="avatar-3.png" alt="Person 2">
-            <blockquote>
-                "I couldn't be more grateful for the opportunities they've provided me."
-            </blockquote>
-            <p>- Rebecca Arthur</p>
-        </div>
-        <div class="testimonial-slide">
-            <img src="avatar-1.png" alt="Person 3">
-            <blockquote>
-                "Their dedication and passion are evident in everything they do."
-            </blockquote>
-            <p>- John Boah</p>
-        </div>
-    </div>
-</section>
-    <div class="contact-container" id="contact">
-        <form class="contact-form" action="submit_form.php" method="POST">
-            <h2>Contact Us</h2>
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-            <p>Have a question? <a href="faq.html">Visit our FAQ</a></p>
-        </form>
-    </div>   
-    <footer>
-        <div class="footer-container">
-            <!-- Logo Section -->
-            <div class="footer-logo">
-                <img src="nana_bee.png" alt="The Nelson Foundation Logo">
-            </div>
-    
-            <!-- Navigation Section -->
-            <nav>
-                <ul class="footer-nav">
-                   <a href="Donate.html">Donate</a> | <a href="about.html">About</a> | <a href="blog.html">Blog</a> | <a href="faq.html">FAQ's</a> | <a href="gallary.html">Gallery</a>
-                </ul>
-            </nav>
-            <div class="social-icons">
-                <a href="https://web.facebook.com/groups/nanabeesfoundation/" target="_blank">
-                    <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" width="30">
-                </a>
-                <a href="#" target="_blank">
-                    <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" width="30">
-                </a>
-                <a href="#" target="_blank">
-                    <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram" width="30">
-                </a>
-                <a href="#" target="_blank">
-                    <img src="https://cdn-icons-png.flaticon.com/512/733/733561.png" alt="LinkedIn" width="30">
-                </a>
-                <a href="#" target="_blank">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" alt="TikTok" width="30">
-                </a>
-            </div>
-            
-            
-            <!-- Contact Information -->
-            <div class="footer-contact">
-                <p>Let's Connect:</p><br>
+                <!-- Navigation Section -->
+                <nav>
+                    <ul class="footer-nav">
+                       <a href="Donate.html">Donate</a> | <a href="about.html">About</a> | <a href="blog.html">Blog</a> | <a href="faq.html">FAQ's</a> | <a href="gallary.html">Gallery</a>
+                    </ul>
+                </nav>
+                <div class="social-icons">
+                    <a href="https://web.facebook.com/groups/nanabeesfoundation/" target="_blank">
+                        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" width="30">
+                    </a>
+                    <a href="#" target="_blank">
+                        <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" width="30">
+                    </a>
+                    <a href="#" target="_blank">
+                        <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram" width="30">
+                    </a>
+                    <a href="#" target="_blank">
+                        <img src="https://cdn-icons-png.flaticon.com/512/733/733561.png" alt="LinkedIn" width="30">
+                    </a>
+                    <a href="#" target="_blank">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" alt="TikTok" width="30">
+                    </a>
+                </div>
                 
-                <ul>
-                    <li><i class="fas fa-map-marker-alt"></i> Twifo Hemang, Ghana</li>
-                    <li><i class="fas fa-phone-alt"></i>+233246447849</a></li>
-                    <li><i class="fas fa-envelope"></i>nanabeesorf2024@gmail.com</li>
-                    <li><i class="fab fa-whatsapp"></i>whatsapp icon below</li>
-                </ul>
+                
+                <!-- Contact Information -->
+                <div class="footer-contact">
+                    <p>Let's Connect:</p><br>
+                    
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Twifo Hemang, Ghana</li>
+                        <li><i class="fas fa-phone-alt"></i>+233246447849</a></li>
+                        <li><i class="fas fa-envelope"></i>nanabeesorf2024@gmail.com</li>
+                        <li><i class="fab fa-whatsapp"></i>whatsapp icon below</li>
+                    </ul>
+                </div>
+        
+                <!-- Working Hours -->
+                <div class="footer-hours">
+                    <i class="fa fa-clock"></i> working Hours</li>
+                    <ul>
+                        <li>Monday - Friday</li>
+                        <li>8:00 AM - 5:30 PM</li>
+                    </ul>
+                </div>
+        
+                <!-- Newsletter Section -->
+                <div class="newsletter">
+                    <h3>Subscribe to Our Newsletter</h3>
+                    <p>Subscribe to get updates about our services and offers.</p>
+                    <form>
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
             </div>
+        
+            <!-- Copyright -->
+            <div class="footer-bottom">
+                <p>Copyright ©2024 Nana-Bee's Foundation. All rights reserved.</p>
+            </div>
+        </footer>
+        
     
-            <!-- Working Hours -->
-            <div class="footer-hours">
-                <i class="fa fa-clock"></i> working Hours</li>
-                <ul>
-                    <li>Monday - Friday</li>
-                    <li>8:00 AM - 5:30 PM</li>
-                </ul>
-            </div>
-    
-            <!-- Newsletter Section -->
-            <div class="newsletter">
-                <h3>Subscribe to Our Newsletter</h3>
-                <p>Subscribe to get updates about our services and offers.</p>
-                <form>
-                    <input type="email" placeholder="Enter your email" required>
-                    <button type="submit">Subscribe</button>
-                </form>
-            </div>
+        <!-- WhatsApp Widget -->
+        <div class="whatsapp-widget" onclick="window.location.href='https://chat.whatsapp.com/Kddx5UAezWV4wH3F8aQWpH'">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
         </div>
     
-        <!-- Copyright -->
-        <div class="footer-bottom">
-            <p>Copyright ©2024 Nana-Bee's Foundation. All rights reserved.</p>
-        </div>
-    </footer>
     
-
-    <!-- WhatsApp Widget -->
-    <div class="whatsapp-widget" onclick="window.location.href='https://chat.whatsapp.com/Kddx5UAezWV4wH3F8aQWpH'">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-    </div>
-
     <script>
-         function toggleMenu() {
+          function toggleMenu() {
             var menu = document.getElementById('nav-menu');
             menu.classList.toggle('mobile-menu');
         }
@@ -252,6 +314,34 @@ button:hover {
             slide.style.display = (i === index) ? 'block' : 'none';
         });
     }
+    function showPopup(id) {
+            document.getElementById(id).style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+        function closePopup() {
+            document.querySelectorAll('.modal').forEach(modal => {
+                modal.style.display = 'none';
+            });
+            document.getElementById('overlay').style.display = 'none';
+        }
+        function payWithPaystack() {
+            let email = document.getElementById("email").value;
+            let amount = document.getElementById("amount").value * 100;
+            let handler = PaystackPop.setup({
+                key: 'pk_live_75110afae621e14afec790dc71f9518',
+                email: email,
+                amount: amount,
+                currency: 'GHS',
+                ref: 'NANABEES-' + Math.floor((Math.random() * 1000000000) + 1),
+                callback: function(response) {
+                    alert('Thank you for your donation!');
+                },
+                onClose: function() {
+                    alert('Donation process was not completed.');
+                }
+            });
+            handler.openIframe();
+        }
 
     function nextSlide() {
         currentSlide = (currentSlide + 1) % slides.length;
@@ -259,64 +349,15 @@ button:hover {
     }
 
     setInterval(nextSlide, 3000);
-
-        function acceptDonation() {
-            var username = document.getElementById("username").value;
-            var email = document.getElementById("email").value;
-            var amount = document.getElementById("amount").value;
-
-            document.getElementById("displayName").innerText = username;
-            document.getElementById("displayEmail").innerText = email;
-            document.getElementById("displayAmount").innerText = amount;
-
-            document.getElementById("donateButton").style.display = "inline-block";
+    function showPopup(id) {
+            document.getElementById(id).style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
         }
-
-        function sendThankYouSMS(phoneNumber) {
-            const apiKey = 'zwNY4rjo1XWnMXn8Om7Q8gk1U'; // Replace with your actual API key
-            const message = encodeURIComponent('Thank you for your generous donation to The Nelson Foundation! Your support means a lot to us.');
-            const senderId = 'TNF SUPPORT';
-            const url = `https://apps.mnotify.net/smsapi?key=${apiKey}&to=${phoneNumber}&msg=${message}&sender_id=${senderId}`;
-
-            fetch(url)
-                .then(response => response.json())
-                .then(data => {
-                    if (data.status === 'success') {
-                        console.log('Thank-you SMS sent successfully.');
-                    } else {
-                        console.error('Failed to send SMS:', data);
-                    }
-                })
-                .catch(error => console.error('Error sending SMS:', error));
-        }
-
-        function makeDonation() {
-            var email = document.getElementById("email").value;
-            var amount = document.getElementById("amount").value;
-            var phoneNumber = document.getElementById("phoneNumber").value;
-
-            var handler = PaystackPop.setup({
-                key: 'pk_live_75110afae621e14afec790dc71f9518', // Replace with your public key
-                email: email,
-                amount: amount * 100,  // Paystack amount is in kobo
-                currency: 'GHS',
-                ref: 'NANABEES-' + Math.floor((Math.random() * 1000000000) + 1),
-                metadata: {
-                    custom_fields: [{
-                        display_name: "Phone Number",
-                        variable_name: "phone_number",
-                        value: phoneNumber
-                    }]
-                },
-                callback: function(response) {
-                    alert('Thank you for your donation!');
-                    sendThankYouSMS(phoneNumber); // Send SMS after donation
-                },
-                onClose: function() {
-                    alert('Donation process was not completed.');
-                }
+        function closePopup() {
+            document.querySelectorAll('.modal').forEach(modal => {
+                modal.style.display = 'none';
             });
-            handler.openIframe();
+            document.getElementById('overlay').style.display = 'none';
         }
         const toggleButton = document.getElementById('theme-toggle');
         const sunIcon = document.getElementById('sun-icon');
