@@ -21,7 +21,7 @@ body {
 }
 /* Header and Navigation */
 header {
-    background-color: rgba(248, 247, 248, 0.137);
+    background-color: rgb(248, 247, 248);
     box-shadow: 0 5px 5px rgb(3, 3, 245);
     padding: 10px 0;
     position: sticky;
